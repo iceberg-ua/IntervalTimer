@@ -56,6 +56,7 @@ public partial class MainForm : Form
         _mainTimer.Start();
 
         _startButton.Enabled = false;
+        _stopButton.Enabled = true;
         _activeSpanCtrl.Enabled = false;
         _breakSpanCtrl.Enabled = false;
     }
@@ -68,7 +69,18 @@ public partial class MainForm : Form
         _breakTimerLabel.Text = $"{_breakTimeSpan.Minutes,2:00}:{_breakTimeSpan.Seconds,2:00}";
 
         _startButton.Enabled = true;
+        _stopButton.Enabled = false;
         _activeSpanCtrl.Enabled = true;
         _breakSpanCtrl.Enabled = true;
+    }
+
+    private void SpanControlValueChanged(object sender, EventArgs e)
+    {
+        UpdateStartButtonState();
+    }
+
+    private void UpdateStartButtonState()
+    { 
+        _startButton.Enabled = _activeSpanCtrl.Value != 0 && _breakSpanCtrl.Value != 0;
     }
 }

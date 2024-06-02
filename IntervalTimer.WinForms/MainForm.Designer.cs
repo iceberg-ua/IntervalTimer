@@ -63,6 +63,7 @@ partial class MainForm
         // _startButton
         // 
         _startButton.BackColor = Color.ForestGreen;
+        _startButton.Enabled = false;
         _startButton.FlatAppearance.BorderSize = 0;
         _startButton.FlatStyle = FlatStyle.Flat;
         _startButton.Font = new Font("Trebuchet MS", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
@@ -82,6 +83,7 @@ partial class MainForm
         _activeSpanCtrl.Name = "_activeSpanCtrl";
         _activeSpanCtrl.Size = new Size(75, 23);
         _activeSpanCtrl.TabIndex = 3;
+        _activeSpanCtrl.ValueChanged += SpanControlValueChanged;
         // 
         // _breakSpanCtrl
         // 
@@ -90,10 +92,12 @@ partial class MainForm
         _breakSpanCtrl.Name = "_breakSpanCtrl";
         _breakSpanCtrl.Size = new Size(75, 23);
         _breakSpanCtrl.TabIndex = 4;
+        _breakSpanCtrl.ValueChanged += SpanControlValueChanged;
         // 
         // _stopButton
         // 
         _stopButton.BackColor = Color.FromArgb(192, 0, 0);
+        _stopButton.Enabled = false;
         _stopButton.FlatAppearance.BorderSize = 0;
         _stopButton.FlatStyle = FlatStyle.Flat;
         _stopButton.Font = new Font("Trebuchet MS", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
