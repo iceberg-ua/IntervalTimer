@@ -13,6 +13,7 @@ public partial class MainForm : Form
     TimeSpan _step = TimeSpan.FromMilliseconds(_intStep);
     bool _active = true;
     int _counter = 0;
+    int _iterationCount = 0;
 
     public MainForm()
     {
@@ -36,7 +37,19 @@ public partial class MainForm : Form
             if (_active)
                 _breakTimerLabel.Text = $"{_breakTimeSpan.Minutes,2:00}:{_breakTimeSpan.Seconds,2:00}";
             else
+            {
                 _activeTimerLabel.Text = $"{_activeTimeSpan.Minutes,2:00}:{_activeTimeSpan.Seconds,2:00}";
+                _counter++;
+                _counterLabel.Text = _counter.ToString();
+
+                if (_inCheckBox.Checked)
+                {
+                    _iterationCount--;
+
+                    if (_iterationCount == 0)
+                        OnStopButtonClick(_stopButton, EventArgs.Empty);
+                }
+            }
 
             _timeSpan = _active ? _breakTimeSpan : _activeTimeSpan;
             _active = !_active;
@@ -53,6 +66,10 @@ public partial class MainForm : Form
 
         _timeSpan = _activeTimeSpan;
         _counter = 0;
+
+        if (_inCheckBox.Checked)
+            _iterationCount = (int)_iterationCountCtrl.Value;
+
         _mainTimer.Start();
 
         _startButton.Enabled = false;
@@ -67,11 +84,13 @@ public partial class MainForm : Form
 
         _activeTimerLabel.Text = $"{_activeTimeSpan.Minutes,2:00}:{_activeTimeSpan.Seconds,2:00}";
         _breakTimerLabel.Text = $"{_breakTimeSpan.Minutes,2:00}:{_breakTimeSpan.Seconds,2:00}";
+        _counterLabel.Text = "0";
 
         _startButton.Enabled = true;
         _stopButton.Enabled = false;
         _activeSpanCtrl.Enabled = true;
         _breakSpanCtrl.Enabled = true;
+        _counter = 0;
     }
 
     private void SpanControlValueChanged(object sender, EventArgs e)
@@ -79,8 +98,15 @@ public partial class MainForm : Form
         UpdateStartButtonState();
     }
 
+    private void IterationNumberCheckedChanged(object sender, EventArgs e)
+    {
+        _iterationCountCtrl.Enabled = _inCheckBox.Checked;
+        UpdateStartButtonState();
+    }
+
     private void UpdateStartButtonState()
-    { 
-        _startButton.Enabled = _activeSpanCtrl.Value != 0 && _breakSpanCtrl.Value != 0;
+    {
+        _startButton.Enabled = _activeSpanCtrl.Value != 0 && _breakSpanCtrl.Value != 0 && 
+                               (!_inCheckBox.Checked || (_inCheckBox.Checked && _iterationCountCtrl.Value > 0));
     }
 }
