@@ -68,7 +68,7 @@ partial class MainForm
         _startButton.FlatStyle = FlatStyle.Flat;
         _startButton.Font = new Font("Trebuchet MS", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
         _startButton.ForeColor = SystemColors.ButtonHighlight;
-        _startButton.Location = new Point(161, 165);
+        _startButton.Location = new Point(12, 125);
         _startButton.Name = "_startButton";
         _startButton.Size = new Size(160, 60);
         _startButton.TabIndex = 2;
@@ -78,20 +78,27 @@ partial class MainForm
         // 
         // _activeSpanCtrl
         // 
-        _activeSpanCtrl.Location = new Point(246, 131);
+        _activeSpanCtrl.BorderStyle = BorderStyle.None;
+        _activeSpanCtrl.Font = new Font("Trebuchet MS", 36F, FontStyle.Bold, GraphicsUnit.Point, 204);
+        _activeSpanCtrl.Location = new Point(191, 125);
         _activeSpanCtrl.Maximum = new decimal(new int[] { 3600, 0, 0, 0 });
         _activeSpanCtrl.Name = "_activeSpanCtrl";
-        _activeSpanCtrl.Size = new Size(75, 23);
+        _activeSpanCtrl.Size = new Size(130, 59);
         _activeSpanCtrl.TabIndex = 3;
+        _activeSpanCtrl.TextAlign = HorizontalAlignment.Center;
         _activeSpanCtrl.ValueChanged += SpanControlValueChanged;
         // 
         // _breakSpanCtrl
         // 
-        _breakSpanCtrl.Location = new Point(327, 131);
+        _breakSpanCtrl.BorderStyle = BorderStyle.None;
+        _breakSpanCtrl.Font = new Font("Trebuchet MS", 36F, FontStyle.Bold, GraphicsUnit.Point, 204);
+        _breakSpanCtrl.Location = new Point(327, 125);
         _breakSpanCtrl.Maximum = new decimal(new int[] { 3600, 0, 0, 0 });
         _breakSpanCtrl.Name = "_breakSpanCtrl";
-        _breakSpanCtrl.Size = new Size(75, 23);
+        _breakSpanCtrl.RightToLeft = RightToLeft.Yes;
+        _breakSpanCtrl.Size = new Size(130, 59);
         _breakSpanCtrl.TabIndex = 4;
+        _breakSpanCtrl.TextAlign = HorizontalAlignment.Center;
         _breakSpanCtrl.ValueChanged += SpanControlValueChanged;
         // 
         // _stopButton
@@ -102,7 +109,7 @@ partial class MainForm
         _stopButton.FlatStyle = FlatStyle.Flat;
         _stopButton.Font = new Font("Trebuchet MS", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
         _stopButton.ForeColor = SystemColors.ButtonHighlight;
-        _stopButton.Location = new Point(327, 165);
+        _stopButton.Location = new Point(476, 125);
         _stopButton.Name = "_stopButton";
         _stopButton.Size = new Size(160, 60);
         _stopButton.TabIndex = 5;
@@ -115,7 +122,7 @@ partial class MainForm
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.DimGray;
-        ClientSize = new Size(644, 241);
+        ClientSize = new Size(652, 198);
         Controls.Add(_stopButton);
         Controls.Add(_breakSpanCtrl);
         Controls.Add(_activeSpanCtrl);
