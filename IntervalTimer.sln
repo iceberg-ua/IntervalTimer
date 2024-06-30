@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntervalTimer.WinForms", "IntervalTimer.WinForms\IntervalTimer.WinForms.csproj", "{FAAD4635-A37A-46A4-A7F5-A549CB49D89F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntervalTimer.WinForms", "IntervalTimer.WinForms\IntervalTimer.WinForms.csproj", "{FAAD4635-A37A-46A4-A7F5-A549CB49D89F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntervalTimer.Blazor", "IntervalTimer.Blazor\IntervalTimer.Blazor\IntervalTimer.Blazor.csproj", "{AD8830CC-45DE-4134-ABBB-040FA02432E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntervalTimer.Blazor", "IntervalTimer.Blazor\IntervalTimer.Blazor\IntervalTimer.Blazor.csproj", "{AD8830CC-45DE-4134-ABBB-040FA02432E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntervalTimer.Blazor.Client", "IntervalTimer.Blazor\IntervalTimer.Blazor.Client\IntervalTimer.Blazor.Client.csproj", "{D8B93D3D-3271-41F5-A8D8-4E09FDC5665F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntervalTimer.Blazor.Client", "IntervalTimer.Blazor\IntervalTimer.Blazor.Client\IntervalTimer.Blazor.Client.csproj", "{D8B93D3D-3271-41F5-A8D8-4E09FDC5665F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blazor", "Blazor", "{1B49603D-627F-45E2-B269-99F483E9D8EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntervalTimer.WPF", "IntervalTimer.WPF\IntervalTimer.WPF.csproj", "{306C49D3-31D0-479A-B319-6CBC2A382CDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{D8B93D3D-3271-41F5-A8D8-4E09FDC5665F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8B93D3D-3271-41F5-A8D8-4E09FDC5665F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8B93D3D-3271-41F5-A8D8-4E09FDC5665F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{306C49D3-31D0-479A-B319-6CBC2A382CDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{306C49D3-31D0-479A-B319-6CBC2A382CDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{306C49D3-31D0-479A-B319-6CBC2A382CDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{306C49D3-31D0-479A-B319-6CBC2A382CDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
