@@ -19,9 +19,24 @@ public partial class NumericUpDown : UserControl
 
     private void TextBoxPreviewKeyDown(object sender, KeyEventArgs e)
     {
-        if((e.Key >= Key.D0 && e.Key <= Key.D9) || 
-           (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9))
-            e.Handled = true;
+        if ((e.Key >= Key.D0 && e.Key <= Key.D9) ||
+           (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) ||
+            e.Key == Key.Back || e.Key == Key.Delete || e.Key == Key.Right || e.Key == Key.Left)
+            return;
+
+        if (e.Key == Key.Up)
+        {
+            Value++;
+            return;
+        }
+
+        if (e.Key == Key.Down)
+        {
+            Value--;
+            return;
+        }
+
+        e.Handled = true;
     }
 
     private void ScrollBarScroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
